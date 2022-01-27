@@ -13,7 +13,7 @@ namespace Event
 
     % for e in event.events:
 struct ${e.name} final :
-        public sdbusplus::event::event
+        public sdbusplus::events::events
 {
     static constexpr auto eventName = "${event.name}.Event.${e.name}";
     static constexpr auto eventDesc =
