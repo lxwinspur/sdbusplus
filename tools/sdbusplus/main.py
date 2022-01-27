@@ -8,7 +8,7 @@ import os
 def main():
     module_path = os.path.dirname(sdbusplus.__file__)
 
-    valid_types = {"interface": sdbusplus.Interface, "error": sdbusplus.Error, "evnet": sdbusplus.Event}
+    valid_types = {"interface": sdbusplus.Interface, "error": sdbusplus.Error, "event": sdbusplus.Event}
     valid_processes = {
         "markdown": "markdown",
         "server-header": "server_header",
