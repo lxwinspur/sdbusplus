@@ -18,8 +18,6 @@ struct ${e.name} final :
     static constexpr auto eventName = "${event.name}.Event.${e.name}";
     static constexpr auto eventDesc =
             "${e.description.strip()}";
-    static constexpr auto eventWhat =
-            "${event.name}.Event.${e.name}: ${e.description.strip()}";
 
     const char* name() const noexcept override;
     const char* description() const noexcept override;
