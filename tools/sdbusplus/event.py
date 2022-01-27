@@ -31,8 +31,8 @@ class Event(NamedElement, Renderer):
     def markdown(self, loader):
         return self.render(loader, "event.md.mako", event=self)
 
-    def exception_header(self, loader):
+    def event_header(self, loader):
         return self.render(loader, "event.hpp.mako", event=self)
 
-    def exception_cpp(self, loader):
+    def event_cpp(self, loader):
         return self.render(loader, "event.cpp.mako", event=self)
