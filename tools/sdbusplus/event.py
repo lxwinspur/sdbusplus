@@ -3,13 +3,6 @@ import yaml
 from .namedelement import NamedElement
 from .renderer import Renderer
 
-
-class EventElement(NamedElement):
-    def __init__(self, **kwargs):
-        super(EventElement, self).__init__(**kwargs)
-        self.errno = kwargs.pop("errno", False)
-
-
 class Event(NamedElement, Renderer):
     @staticmethod
     def load(name, rootdir="."):
@@ -24,7 +17,7 @@ class Event(NamedElement, Renderer):
             return Event(**y)
 
     def __init__(self, **kwargs):
-        self.events = [EventElement(**n) for n in kwargs.pop("events", [])]
+        self.events = kwargs.pop('events', None)
 
         super(Event, self).__init__(**kwargs)
 
