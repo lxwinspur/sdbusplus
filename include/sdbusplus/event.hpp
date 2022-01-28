@@ -16,13 +16,13 @@ namespace events
  *  by the bindings. */
 struct events
 {
-    events() = delete;
-    events(const events&) = delete;
-    events& operator=(const events&) = delete;
+    // events() = delete;
+    // events(const events&) = delete;
+    // events& operator=(const events&) = delete;
 
-    events(events&&) = default;
-    events& operator=(events&&) = default;
-    ~events() = default;
+    // events(events&&) = default;
+    // events& operator=(events&&) = default;
+    virtual ~events() = default;
 
     virtual const char* name() const noexcept = 0;
     virtual const char* description() const noexcept = 0;
