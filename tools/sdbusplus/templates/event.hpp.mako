@@ -1,7 +1,6 @@
 #pragma once
 
-#include <cerrno>
-#include <sdbusplus/exception.hpp>
+#include <sdbusplus/event.hpp>
 <% namespaces = event.name.split('.') %>
 namespace sdbusplus
 {
@@ -13,24 +12,15 @@ namespace Event
 {
 
     % for e in event.events:
-struct ${e.name} final :
-        public sdbusplus::exception::generated_exception
+struct ${e.name} final : public sdbusplus::events::events
 {
     static constexpr auto errName = "${event.name}.Event.${e.name}";
     static constexpr auto errDesc =
             "${e.description.strip()}";
-    static constexpr auto errWhat =
-            "${event.name}.Event.${e.name}: ${e.description.strip()}";
-    % if e.errno:
-    static constexpr auto errErrno = ${e.errno};
-    % endif
 
     const char* name() const noexcept override;
     const char* description() const noexcept override;
-    const char* what() const noexcept override;
-    % if e.errno:
-    int get_errno() const noexcept override;
-    % endif
+
 };
 
     % endfor

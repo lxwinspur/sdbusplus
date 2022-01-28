@@ -17,16 +17,6 @@ const char* ${e.name}::description() const noexcept
 {
     return errDesc;
 }
-const char* ${e.name}::what() const noexcept
-{
-    return errWhat;
-}
-    % if e.errno:
-int ${e.name}::get_errno() const noexcept
-{
-    return errErrno;
-}
-    % endif
     % endfor
 
 } // namespace Event

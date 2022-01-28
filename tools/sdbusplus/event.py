@@ -7,7 +7,6 @@ from .renderer import Renderer
 class EventElement(NamedElement):
     def __init__(self, **kwargs):
         super(EventElement, self).__init__(**kwargs)
-        self.event = kwargs.pop("event", False)
 
 
 class Event(NamedElement, Renderer):
