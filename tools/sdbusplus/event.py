@@ -4,9 +4,9 @@ from .namedelement import NamedElement
 from .renderer import Renderer
 
 
-class ErrorElement(NamedElement):
+class EventElement(NamedElement):
     def __init__(self, **kwargs):
-        super(ErrorElement, self).__init__(**kwargs)
+        super(EventElement, self).__init__(**kwargs)
         self.errno = kwargs.pop("errno", False)
 
 
@@ -24,7 +24,7 @@ class Event(NamedElement, Renderer):
             return Event(**y)
 
     def __init__(self, **kwargs):
-        self.events = [ErrorElement(**n) for n in kwargs.pop("events", [])]
+        self.events = [EventElement(**n) for n in kwargs.pop("events", [])]
 
         super(Event, self).__init__(**kwargs)
 
