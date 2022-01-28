@@ -11,11 +11,20 @@ namespace Event
     % for e in event.events:
 const char* ${e.name}::name() const noexcept
 {
-    return eventName;
+    return errName;
 }
 const char* ${e.name}::description() const noexcept
 {
-    return eventDesc;
+    return errDesc;
+}
+const char* ${e.name}::what() const noexcept
+{
+    return errWhat;
+}
+    % if e.errno:
+int ${e.name}::get_errno() const noexcept
+{
+    return errErrno;
 }
     % endif
     % endfor
