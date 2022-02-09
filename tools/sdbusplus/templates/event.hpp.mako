@@ -14,12 +14,15 @@ namespace Event
     % for e in event.events:
 struct ${e.name} final : public sdbusplus::events::events
 {
-    static constexpr auto errName = "${event.name}.Event.${e.name}";
-    static constexpr auto errDesc =
+    static constexpr auto eventName = "${event.name}.Event.${e.name}";
+    static constexpr auto eventDesc =
             "${e.description.strip()}";
+    static constexpr auto eventConsumer =
+            "${e.consumer.strip()}";
 
     const char* name() const noexcept override;
     const char* description() const noexcept override;
+    const char* consumer() const noexcept override;
 
 };
 
