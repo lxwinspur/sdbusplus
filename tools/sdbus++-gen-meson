@@ -309,7 +309,7 @@ function cmd_cpp {
         [ ! -e "$rootdir/$1.errors.yaml" ] && \
         [ ! -e "$rootdir/$1.events.yaml" ];
     then
-        echo "Missing YAML0 for $rootdir/$1."
+        echo "Missing YAML for $1."
         exit 1
     fi
 
@@ -355,7 +355,7 @@ function cmd_markdown {
         [ ! -e "$rootdir/$1.errors.yaml" ] && \
         [ ! -e "$rootdir/$1.events.yaml" ];
     then
-        echo "Missing YAML1 for $rootdir/$1."
+        echo "Missing YAML for $1."
         exit 1
     fi
 

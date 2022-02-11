@@ -17,9 +17,11 @@ struct ${e.name} final : public sdbusplus::events::events
     static constexpr auto errName = "${event.name}.Event.${e.name}";
     static constexpr auto errDesc =
             "${e.description.strip()}";
+    static constexpr auto errConsumer = "${e.consumer.strip()}";
 
     const char* name() const noexcept override;
     const char* description() const noexcept override;
+    const char* consumer() const noexcept override;
 
 };
 

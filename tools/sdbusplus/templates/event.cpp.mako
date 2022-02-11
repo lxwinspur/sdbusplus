@@ -17,6 +17,10 @@ const char* ${e.name}::description() const noexcept
 {
     return errDesc;
 }
+const char* ${e.name}::consumer() const noexcept
+{
+    return errConsumer;
+}
     % endfor
 
 } // namespace Event
